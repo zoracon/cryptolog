@@ -11,6 +11,7 @@ base64 = "0.21.2"
 base64ct = "1.6.0"
 chrono = "0.4.26"
 clap = { version = "4.3.9", features = ["derive"] }
+error-chain = "0.12.4"
 hmac = "0.12.1"
 lazy_static = "1.4.0"
 rand = "0.8.5"
