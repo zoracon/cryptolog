@@ -66,9 +66,7 @@ fn main() -> Result<()> {
     // The regex \b is used to ensure that the matching sequence is a whole word (to avoid partial matches), and it alternates between matching IPv4 and IPv6 addresses. 
     // This regex will match IPv4 addresses in standard dotted-decimal notation and IPv6 addresses in their hexadecimal format.
     println!("Parsing and Encrypting IPs in log file");
-    // let set = Regex::new(r#"\b(?:\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[0-9a-fA-F:]+)\b"#).unwrap();
-    let set = Regex::new(r#"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"#,).unwrap();
-
+    let set = Regex::new(r#"\b(?:\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4})"#).unwrap();
 
     // Stream log file and replace IP in each log entry.
     let data: Vec<String> = buffered
